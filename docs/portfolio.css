@@ -22,7 +22,7 @@ body {
    TIPOGRAFIA
 ===================== */
 h1 {
-  font-size: 156px;
+  font-size: clamp(48px, 12vw, 156px);
   color: #fff;
   font-weight: 1000;
   text-align: left;
@@ -53,11 +53,14 @@ h1 {
   font-weight: 1000;
   letter-spacing: 0.08em;
   background-color: #FFF128;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .menu {
   display: flex;
   gap: 16px;
+  flex-wrap: wrap;
 }
 
 /* =====================
@@ -81,7 +84,7 @@ h1 {
   width: max-content;
   animation: ticker 18s linear infinite;
   font-weight: 700;
-  font-size: 13px;
+  font-size: clamp(10px, 1.5vw, 13px);
   letter-spacing: 0.15em;
   color: #000;
 }
@@ -127,7 +130,7 @@ section {
 
 .head {
   text-align: left;
-  font-size: 26px;
+  font-size: clamp(18px, 2.5vw, 26px);
   font-weight: 900;
   background: #fff;
   padding: 12px;
@@ -138,7 +141,7 @@ section {
 
 .content {
   padding: 24px 12px;
-  font-size: 22px;
+  font-size: clamp(15px, 1.8vw, 22px);
   font-weight: 1000;
   display: flex;
   flex-direction: column;
@@ -180,24 +183,23 @@ a:active {
   box-shadow: 2px 2px 0 #000;
 }
 
-
 .botoes {
-   display: flex;
+  display: flex;
   gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: auto; 
+  margin-top: 20px; /* Mude de 'auto' para um valor fixo como 20px */
 }
 
-
-
 /* =====================
-   SEÇÃO SOBRE — FLEX
+   SEÇÃO SOBRE
 ===================== */
 #sobre {
   position: relative;
-  height: 1000px;
-  padding-top: 110px;
+  height: auto;
+  min-height: 100vh;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 #sobre .cards {
@@ -209,11 +211,10 @@ a:active {
   flex-wrap: wrap;
 }
 
-/* card de texto */
 #sobre .card1 {
   position: static;
   flex: 1;
-  min-width: 300px;
+  min-width: 280px;
   transform: rotate(-2deg);
   background: #7aff87;
   z-index: 1;
@@ -224,10 +225,9 @@ a:active {
   box-shadow: 18px 18px 0 #000;
 }
 
-/* card de foto principal */
 #sobre .card2 {
   position: static;
-  width: 320px;
+  width: min(320px, 100%);
   flex-shrink: 0;
   transform: rotate(3deg);
   background-color: #E83F1F;
@@ -245,17 +245,17 @@ a:active {
   max-width: 100%;
 }
 
-/* card de foto secundária (card3-foto) */
 #sobre .card3-foto {
-  position: relative;
-  width: 320px;
-  top: -60px;
-  left: 64%;
+  position: static;
+  width: min(320px);
   flex-shrink: 0;
   transform: rotate(-2deg);
   background-color: #62AEA7;
   z-index: 2;
+  margin: 0;
 }
+
+
 
 #sobre .card3-foto:hover {
   transform: translate(-6px, -6px) rotate(0deg);
@@ -268,13 +268,43 @@ a:active {
   max-width: 100%;
 }
 
+#sobre .card4 {
+  position: static;
+  width: 100%;
+  max-width: 650px;
+  height: fit-content; /* ADICIONE ISSO: O card para de esticar */
+  flex: 1;
+  transform: rotate(2deg);
+  background-color: #91aeff;
+  z-index: 2;
+  margin: 0;
+  display: flex;         /* Garante controle interno */
+  flex-direction: column;
+}
+
+
+.row-extra {
+  display: flex;
+  gap: 40px;
+  align-items: stretch; /* Faz os dois cards terem a mesma altura se possível */
+  margin-top: 40px;
+}
+
+#sobre .card4 a {
+  background-color: #ffe26c;
+}
+
+#sobre .card4:hover {
+  transform: translate(-6px, -6px) rotate(0deg);
+  box-shadow: 18px 18px 0 #000;
+}
 
 /* =====================
    SEÇÃO PROJETOS — GRID
 ===================== */
 #projetos .cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
   position: static;
   align-items: start;
@@ -302,27 +332,6 @@ a:active {
   box-shadow: 18px 18px 0 #000;
 }
 
-#sobre .card4 {
-  position: relative;
-  width: 650px;
-  height: 210px;
-  top: -360px;
-  left: 3%;
-  flex-shrink: 0;
-  transform: rotate(8deg);
-  background-color: #91aeff;
-  z-index: 2;
-}
-#sobre .card4 a {
-  background-color: #ffe26c
-}
-
-
-#sobre .card4:hover {
-  transform: translate(-6px, -6px) rotate(0deg);
-  box-shadow: 18px 18px 0 #000;
-}
-
 .projeto2 {
   background-color: #2aff66;
 }
@@ -337,38 +346,44 @@ a:active {
   box-shadow: 18px 18px 0 #000;
 }
 
+/* =====================
+   SEÇÃO SKILLS
+===================== */
 #skills {
-  position: relative;  /* necessário para o absolute funcionar */
-  height: 900px;
+  position: relative;
+  height: auto;
+  min-height: 100vh;
+  padding: 60px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
+  align-content: flex-start;
 }
 
 .skill-card-1 {
-  position: absolute;
-  width: 480px;
-  top: 80px;
-  left: 5%;
+  position: static;
+  width: min(480px, 100%);
   transform: rotate(-2deg);
   background: #4cff1b;
 }
 
 .skill-card-2 {
-  position: absolute;
-  width: 480px;
-  top: 400px;       /* ajusta para subir/descer */
-  left: 45%;        /* ajusta para esquerda/direita */
+  position: static;
+  width: min(480px, 100%);
   transform: rotate(2deg);
   background: #ff3030;
+  margin-left: auto;
 }
 
 .skill-card-3 {
-  position: absolute;
-  width: 480px;
-  top: 50px;       /* ajusta para subir/descer */
-  left: 62%;        /* ajusta para esquerda/direita */
+  margin-top: 20px;
+  margin-left: 20%;
+  position: static;
+  width: min(480px, 100%);
   transform: rotate(-4deg);
   background: #dc30ff;
 }
-
 
 .skill-card-1:hover,
 .skill-card-2:hover,
@@ -385,28 +400,37 @@ a:active {
 }
 
 .skill-icons img {
-  width: 128px;
-  height: 128px;
+  width: clamp(80px, 10vw, 128px);
+  height: clamp(80px, 10vw, 128px);
   object-fit: contain;
   border: 4px solid #000;
   padding: 8px;
   background: #fff;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
+
 .skill-icons img:hover {
   transform: translate(-4px, -4px);
   box-shadow: 8px 8px 0 #000;
 }
+
+/* =====================
+   SEÇÃO CV
+===================== */
 #cv {
-  position: relative;  /* necessário para o absolute funcionar */
-  height: 300px;
+  position: relative;
+  height: auto;
+  min-height: 60vh;
+  padding: 60px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: flex-start;
 }
 
 .card.cv-card-1 {
-  position: absolute;
-  width: 600px;
-  left: 12%;
-  top: 80px;
+  position: static;
+  width: min(600px, 100%);
   transform: rotate(-2deg);
   background: #1bffb7;
 }
@@ -421,15 +445,14 @@ a:active {
   color: #000000;
 }
 
-#cv .card.card5-foto{
-   position: relative;
-  width: 320px;
-  top: 100px;
-  left: 65%;
+#cv .card.card5-foto {
+  position: static;
+  width: min(320px, 100%);
   flex-shrink: 0;
   transform: rotate(4deg);
   background-color: #f93dff;
   z-index: 2;
+  margin-left: auto;
 }
 
 #cv .card.card5-foto:hover {
@@ -442,7 +465,6 @@ a:active {
   height: auto;
   max-width: 100%;
 }
-
 
 /* =====================
    FOOTER
@@ -457,7 +479,7 @@ a:active {
   flex-wrap: wrap;
   gap: 16px;
   font-weight: 900;
-  font-size: 14px;
+  font-size: clamp(11px, 1.2vw, 14px);
   letter-spacing: 0.1em;
 }
 
@@ -466,7 +488,6 @@ a:active {
   gap: 12px;
   flex-wrap: wrap;
 }
-
 
 .footer-right a {
   background: #000;
@@ -481,4 +502,122 @@ a:active {
   box-shadow: 6px 6px 0 #FF28B7;
 }
 
+/* =====================
+   MOBILE — 768px
+===================== */
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 20px;
+  }
+.row-extra {
+    flex-direction: column; /* No celular, um volta a ficar em cima do outro */
+    gap: 24px;
+  }
+  section {
+    padding: 50px 20px;
+  }
 
+  #titulo {
+    padding-bottom: 80px;
+  }
+
+  #sobre {
+    padding-top: 40px;
+  }
+
+  #sobre .cards {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  #sobre .card2{
+    width: 100%;
+    margin-left: 0;
+  }
+
+  
+
+#sobre .card3-foto, 
+  #sobre .card4 {
+    width: 100%;
+    margin-left: 0;
+    transform: rotate(0deg); /* Endireita para facilitar a leitura no celular */
+  }
+
+
+  #skills {
+    padding: 40px 20px;
+    gap: 28px;
+  }
+
+  .skill-card-1,
+  .skill-card-2,
+  .skill-card-3 {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #cv {
+    padding: 40px 20px;
+    gap: 28px;
+  }
+
+  .card.cv-card-1 {
+    width: 100%;
+  }
+
+  #cv .card.card5-foto {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #projetos .cards {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .footer {
+    padding: 16px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #sobre .card2 img,
+  #sobre .card3-foto img,
+  #cv .card.card5-foto img {
+    width: auto;            /* Sobrescreve o 100% anterior */
+    max-width: 100%;        /* Garante que não vaze do card */
+    max-height: 250px;      /* Limita a altura para não ficar gigante (ajuste como preferir) */
+    object-fit: contain;    /* Mantém a proporção da imagem sem distorcer */
+    margin: 0 auto;
+  
+  }
+}
+
+/* =====================
+   MOBILE — 480px
+===================== */
+@media (max-width: 480px) {
+  .header {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .menu {
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  section {
+    padding: 40px 16px;
+  }
+
+  .botoes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-right {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
