@@ -188,7 +188,7 @@ a:active {
   gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 20px; /* Mude de 'auto' para um valor fixo como 20px */
+  margin-top: 20px; 
 }
 
 /* =====================
@@ -272,13 +272,13 @@ a:active {
   position: static;
   width: 100%;
   max-width: 650px;
-  height: fit-content; /* ADICIONE ISSO: O card para de esticar */
+  height: fit-content; 
   flex: 1;
   transform: rotate(2deg);
   background-color: #91aeff;
   z-index: 2;
   margin: 0;
-  display: flex;         /* Garante controle interno */
+  display: flex;         
   flex-direction: column;
 }
 
@@ -286,8 +286,7 @@ a:active {
 .row-extra {
   display: flex;
   gap: 40px;
-  align-items: stretch; /* Faz os dois cards terem a mesma altura se possível */
-  margin-top: 40px;
+  align-items: stretch;
 }
 
 #sobre .card4 a {
@@ -510,7 +509,7 @@ a:active {
     padding: 12px 20px;
   }
 .row-extra {
-    flex-direction: column; /* No celular, um volta a ficar em cima do outro */
+    flex-direction: column;
     gap: 24px;
   }
   section {
@@ -541,7 +540,7 @@ a:active {
   #sobre .card4 {
     width: 100%;
     margin-left: 0;
-    transform: rotate(0deg); /* Endireita para facilitar a leitura no celular */
+    transform: rotate(0deg); 
   }
 
 
@@ -584,10 +583,10 @@ a:active {
   #sobre .card2 img,
   #sobre .card3-foto img,
   #cv .card.card5-foto img {
-    width: auto;            /* Sobrescreve o 100% anterior */
-    max-width: 100%;        /* Garante que não vaze do card */
-    max-height: 250px;      /* Limita a altura para não ficar gigante (ajuste como preferir) */
-    object-fit: contain;    /* Mantém a proporção da imagem sem distorcer */
+    width: auto;           
+    max-width: 100%;        
+    max-height: 250px;      
+    object-fit: contain;    
     margin: 0 auto;
   
   }
