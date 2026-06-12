@@ -1,6 +1,17 @@
-# ra2581392523009
-Repositório do aluno GABRIEL OLIVEIRA DOS SANTOS.
+# Portfólio de Projetos - Fatec Jacareí
 
-Link para acessar o pagina do portfolio via github: [Portfolio 2026 - Gabriel Oliveira](https://fatec-jacarei-dsm-portfolio.github.io/ra2581392523009/)
+**Aluno:** [Gabriel Oliveira dos Santos]  
+**Curso:** 2°semestre - Desenvolvimento de Software Multiplataforma  
+**Turma:** [semestre e ano de ingresso]
 
-Link para assistir ao vídeo do portfolio no youtube: [Video - Portfolio Gabriel Oliveira - 2026](https://youtu.be/EIorb7jjKBg)
+---
+
+**Portfólio Online**
+
+🔗 [Acesse o Portfólio](https://fatec-jacarei-dsm-portfolio.github.io/ra2581392523009/)
+
+---
+
+**Vídeos de Apresentação**
+
+🎤 2DSM - [Vídeo](https://youtu.be/EIorb7jjKBg)
