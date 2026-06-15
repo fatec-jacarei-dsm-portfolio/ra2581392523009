@@ -2,7 +2,7 @@
 
 **Aluno:** [Gabriel Oliveira dos Santos]  
 **Curso:** 2°semestre - Desenvolvimento de Software Multiplataforma  
-**Turma:** [semestre e ano de ingresso]
+**Turma:** [2°semestre - 2025]
 
 ---
 
